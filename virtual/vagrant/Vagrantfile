@@ -1,0 +1,73 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+require 'yaml'
+
+config_file = 'vagrant.yml'
+synced_folder = '~/Code/quickbrain-v2'
+id_rsa_pub = "~/.ssh/id_rsa.pub"
+id_rsa = "~/.ssh/id_rsa"
+git_config = "~/.gitconfig"
+vm_memory = "2048"
+vm_name = "QuickbrainV2"
+vm_ip = "192.168.201.10"
+vm_cpus = 1
+fwd_web_port = 8083
+fwd_bdd_port = 3603
+
+if File::exists?( config_file )
+  settings = YAML.load_file config_file
+  synced_folder = settings['synced_folder'] if settings['synced_folder']
+  id_rsa_pub = settings['id_rsa_pub'] if settings['id_rsa_pub']
+  id_rsa = settings['id_rsa'] if settings['id_rsa']
+  git_config = settings['git_config'] if settings['git_config']
+  vm_memory = settings['vm_memory'] if settings['vm_memory']
+  vm_name = settings['vm_name'] if settings['vm_name']
+  vm_ip = settings['vm_ip'] if settings['vm_ip']
+  vm_cpus = settings['vm_cpus'] if settings['vm_cpus']
+  fwd_web_port = settings['fwd_web_port'] if settings['fwd_web_port']
+  fwd_bdd_port = settings['fwd_bdd_port'] if settings['fwd_bdd_port']
+end
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "debian/stretch64"
+  config.vm.network "forwarded_port", guest: 80, host: fwd_web_port, host_ip: "127.0.0.1", id: 'web'
+  config.vm.network "forwarded_port", guest: 3306, host: fwd_bdd_port, host_ip: "127.0.0.1", id: 'bdd'
+  config.vm.network "private_network", ip: vm_ip
+  
+  # Répertoires partagés
+   config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
+  if Vagrant::Util::Platform.windows?
+    config.vm.synced_folder synced_folder, "/home/vagrant/Code", owner: "vagrant", type: "virtualbox", :mount_options=> ['dmode=777', 'fmode=777']
+  else
+    config.vm.synced_folder synced_folder, "/home/vagrant/Code", type: "virtualbox"
+  end
+  
+  # Configuration VM
+  config.vm.provider "virtualbox" do |v|
+    v.name = vm_name
+    v.cpus = vm_cpus
+    v.memory = vm_memory
+    if Vagrant::Util::Platform.windows?
+      v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/home/vagrant/Code", "1"]
+    end
+  end
+  
+  # Configuration SSH
+  config.ssh.username = "vagrant"
+  #config.ssh.password = "vagrant"
+  config.ssh.insert_key = false
+  if File::exists?( id_rsa )
+	config.ssh.private_key_path = [id_rsa,"~/.vagrant.d/insecure_private_key"]
+	  config.vm.provision "file", source: id_rsa_pub, destination: "~/.ssh/authorized_keys"
+    # config.vm.provision "file", source: id_rsa, destination: ".ssh/id_rsa"
+  end
+  
+  if File::exists?( git_config )
+    config.vm.provision "file", source: git_config, destination: ".gitconfig"
+  end
+  
+  config.vm.provision "shell", path: "provision/setup.sh"
+  # if Vagrant::Util::Platform.windows?
+  #   config.vm.provision "shell", path: "provision/setup_win.sh"
+  # end
+end

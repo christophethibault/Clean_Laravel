@@ -1,0 +1,10 @@
+synced_folder: "~/Code/quickbrain-v2"
+id_rsa_pub: "~/.ssh/id_rsa.pub"
+id_rsa: "~/.ssh/id_rsa.pub"
+git_config: "~/.gitconfig"
+vm_memory: "2048"
+vm_name: "QuickbrainV2"
+vm_ip: "192.168.201.10"
+vm_cpus: 2
+fwd_web_port: 8083
+fwd_bdd_port: 3603

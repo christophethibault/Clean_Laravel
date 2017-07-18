@@ -1,0 +1,40 @@
+{
+  "name": "quickbrain_v2",
+  "description": "Quickbrain_v2",
+  "authors": [
+    "Damien MANOUKIAN",
+    "Christophe THIBAULT"
+  ],
+  "license": "MIT",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "resources/assets/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "3.*",
+    "font-awesome-sass": "4.*",
+    "bootstrap-sass": "3.*",
+    "typeahead.js": "^0.11.*",
+    "typeahead.js-bootstrap-css": "^1.2.*",
+    "jquery-treegrid": "^0.3.*",
+    "select2": "^4.0.*",
+    "bootstrap-fileinput": "master",
+    "bootstrap-datepicker": "^1.6.*",
+    "simplemde": "^1.11.2",
+    "lobibox": "1.2.*",
+    "clockpicker": "^0.0.7",
+    "jstree":"3.3.*"
+  },
+  "resolutions": {
+    "jquery": "3.*"
+  },
+  "devDependencies": {}
+}
