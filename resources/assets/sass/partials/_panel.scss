@@ -1,0 +1,98 @@
+$panel-title-heading-size: ceil(1.6*$font-size-large);
+.panel {
+  .panel-body + .panel-body,
+  .panel-body + .table {
+    border-top: solid 1px $border-color;
+  }
+
+  .title-panel-heading {
+    font-size: $panel-title-heading-size;
+    font-family: inherit;
+    font-weight: 300;
+    line-height: 1.1;
+    color: inherit;
+  }
+
+  > .panel-heading {
+    background-color: $color-paper;
+  }
+
+  .table > thead > tr > th {
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+}
+
+.panel.panel-full {
+  @extend .panel-default;
+  border-bottom: none;
+  box-shadow: none;
+  border-radius: 0;
+
+  > .panel-heading {
+    min-height: 100px;
+    background-color: $color-paper;
+    padding: 1.5em 2em 0.5em;
+
+    h4 {
+      font-size: $panel-title-heading-size;
+    }
+  }
+
+  > .panel-body {
+    padding: 1.5em 2em 0.5em;
+  }
+
+  > .table,
+  > div > .table,
+  > section > .table {
+    margin-top: 2em;
+    th:first-child,
+    td:first-child {
+      padding-left: 1.5em;
+    }
+    th:last-child,
+    td:last-child {
+      padding-right: 1.5em;
+    }
+  }
+
+  > div.pagination,
+  > div > div.pagination {
+    padding-right: 2em;
+  }
+
+  .panel-body {
+    .nav.nav-pills {
+      text-transform: uppercase;
+      padding-bottom: 7px;
+    }
+  }
+
+  .panel-body.candidature,
+  .panel-body.sourcing {
+    @extend .container-fluid;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    background-color: #f3f3f3;
+    border-top: 1px solid #636b6f;
+    border-bottom: 1px solid #636b6f;
+
+    p {
+      font-weight: 300;
+    }
+  }
+
+  .panel-body.candidature + .panel-body.sourcing,
+  .panel-body.sourcing + .panel-body.candidature {
+    border-top: none;
+  }
+
+}
+
+.panel .panel-body + .panel-body, .box .panel-body + .panel-body, .box .panel .box-body + .panel-body, .box .box-body + .panel-body, .box .panel .panel-body + .box-body, .box .panel-body + .box-body, .box .panel .box-body + .box-body, .box .box-body + .box-body,
+.panel .panel-body + .table, .box .panel-body + .table, .box
+.panel .box-body + .table, .box .box-body + .table {
+	border-top: none;
+}

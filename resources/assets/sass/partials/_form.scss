@@ -1,0 +1,38 @@
+form {
+  label {
+    text-transform: uppercase;
+    font-size: $font-size-small;
+    font-weight: 300;
+  }
+}
+
+label {
+  text-transform: uppercase;
+  font-size: $font-size-small;
+  font-weight: 300;
+}
+
+.form-static {
+  label {
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: $font-size-small;
+  }
+  .form-control-static {
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+}
+.select2-container {
+  width: 100%;
+}
+
+.select2-container .select2-selection--single,
+.select2-container--default .select2-selection--single .select2-selection__arrow,
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  height: 36px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 36px;
+}

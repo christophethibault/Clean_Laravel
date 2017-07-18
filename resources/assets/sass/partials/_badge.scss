@@ -1,0 +1,27 @@
+@mixin badge-color($color) {
+  background-color: $color;
+}
+
+.badge-default {
+  @include badge-color($silver);
+}
+
+.badge-danger {
+  @include badge-color($brand-danger);
+}
+
+.badge-info {
+  @include badge-color($brand-info);
+}
+
+.badge-primary {
+  @include badge-color($brand-primary);
+}
+
+.badge-warning {
+  @include badge-color($brand-warning);
+}
+
+.badge-success {
+  @include badge-color($brand-success);
+}

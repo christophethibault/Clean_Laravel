@@ -1,0 +1,29 @@
+@media (min-width: 768px) {
+  #adresse-list .adresse-info:nth-child(-n+2) {
+    margin-top: 0px;
+  }
+  #adresse-list .adresse-info {
+    margin-top: 20px;
+  }
+}
+
+#adresse-list .adresse-info-hidden {
+  display: none;
+}
+
+address {
+  font-weight: 300;
+  label {
+    @extend .label, .label-default;
+    font-size: ceil(0.7*$font-size-base);
+  }
+  /*label:after {
+    content:':';
+    width: 12em;
+  }*/
+
+  .title {
+    font-size: $font-size-large;
+    font-weight: 300;
+  }
+}

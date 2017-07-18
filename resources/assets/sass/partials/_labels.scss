@@ -1,0 +1,45 @@
+.label {
+  font-weight: 400;
+  color: $text-color;
+  border: solid 1px $text-color;
+  padding: .2em .6em .2em;
+}
+
+@mixin label-color($color) {
+  background: transparent;
+  border-color: $color;
+  color: $color;
+}
+
+.label-default {
+  @include label-color($silver);
+  color: $text-color;
+}
+
+.label-danger {
+  @include label-color($brand-danger);
+}
+
+.label-info {
+  @include label-color($brand-info);
+}
+
+.label-primary {
+  @include label-color($brand-primary);
+}
+
+.label-warning {
+  @include label-color($brand-warning);
+}
+
+.label-success {
+  @include label-color($brand-success);
+}
+
+.label-ca {
+  @include label-color(#FF8800);
+}
+
+.label-cp {
+  @include label-color(#ff4444);
+}

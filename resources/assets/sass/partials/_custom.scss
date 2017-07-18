@@ -1,0 +1,232 @@
+// Badge on icon
+.notification-icon-badge:after {
+  position: absolute;
+  content: attr(data-count);
+  margin-left: -5px;
+  margin-top: -5px;
+  padding: 0 3px;
+  min-width: 16px;
+  height: 16px;
+  line-height: 16px;
+  background: $brand-danger;
+  border-radius: 100%;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: $font-family-sans-serif;
+}
+
+a {
+  cursor: pointer;
+}
+
+// Hack, placeholder truncated
+// See https://github.com/select2/select2/issues/4323
+.select2-search__field {
+  width: 100% !important;
+}
+
+.no-background {
+  background-color: transparent !important;
+}
+
+.inline {
+  display: inline;
+}
+
+.text-decoration-none {
+  text-decoration: none !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.no-border {
+  border: none !important;
+}
+
+.hiddenRow {
+  padding: 0 !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+//.vcenter {
+//  display: inline-block;
+//  vertical-align: middle;
+//  float: none;
+//}
+
+.vertical-align {
+  display: flex;
+  align-items: center;
+}
+
+// Witdh
+.width5 {
+  width: 5%;
+}
+
+.width10 {
+  width: 10%;
+}
+
+.width15 {
+  width: 15%;
+}
+
+.width20 {
+  width: 20%;
+}
+
+.width30 {
+  width: 30%;
+}
+
+.width40 {
+  width: 40%;
+}
+
+.width50 {
+  width: 50%;
+}
+
+.width60 {
+  width: 60%;
+}
+
+.width70 {
+  width: 70%;
+}
+
+.width80 {
+  width: 80%;
+}
+
+.width90 {
+  width: 90%;
+}
+
+.verticalLineLeft {
+  border-left: 1px solid #777;
+}
+
+.verticalLineRight {
+  border-right: 1px solid #777;
+}
+
+@mixin no-padding($side) {
+  @if $side == 'all' {
+    .no-padding {
+      padding: 0 !important;
+    }
+  } @else {
+    .no-padding-#{$side} {
+      padding-#{$side}: 0 !important;
+    }
+  }
+}
+
+@include no-padding("left");
+@include no-padding("right");
+@include no-padding("top");
+@include no-padding("bottom");
+@include no-padding("all");
+
+@mixin no-margin($side) {
+  @if $side == 'all' {
+    .no-margin {
+      margin: 0 !important;
+    }
+  } @else {
+    .no-margin-#{$side} {
+      margin-#{$side}: 0 !important;
+    }
+  }
+}
+
+@include no-margin("left");
+@include no-margin("right");
+@include no-margin("top");
+@include no-margin("bottom");
+@include no-margin("all");
+
+@mixin border($side) {
+  @if $side == 'all' {
+    .border {
+      border: 1px solid rgba(0, 0, 0, .12);
+    }
+  } @else {
+    .border-#{$side} {
+      border-#{$side}: 1px solid rgba(0, 0, 0, .12);
+    }
+  }
+}
+
+@include border("left");
+@include border("right");
+@include border("top");
+@include border("bottom");
+@include border("all");
+
+.margin-top-05 {
+  margin-top: 0.5em;
+}
+
+.margin-top-10 {
+  margin-top: 1.0em;
+}
+
+.margin-top-15 {
+  margin-top: 1.5em;
+}
+
+.margin-top-20 {
+  margin-top: 2.0em;
+}
+
+.margin-top-25 {
+  margin-top: 2.5em;
+}
+
+.margin-top-30 {
+  margin-top: 3.0em;
+}
+
+.padding-bottom-20 {
+  padding-bottom: 20px;
+}
+
+.margin-right-5 {
+  margin-right: 5px;
+}
+
+.margin-left-5 {
+  margin-left: 5px;
+}
+
+.padding-right-5 {
+  padding-right: 5px;
+}
+
+.padding-left-5 {
+  padding-right: 5px;
+}
+
+.padding-right-10 {
+  padding-right: 10px;
+}
+
+.padding-left-10 {
+  padding-right: 10px;
+}
+
+.label-oriz {
+  line-height: 37px;
+}
+

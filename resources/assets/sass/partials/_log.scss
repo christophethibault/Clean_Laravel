@@ -1,0 +1,82 @@
+.compteclient-icon {
+  @extend .fa-users;
+}
+
+.contact-icon {
+  @extend .fa-phone;
+}
+
+.mission-icon {
+  @extend .fa-briefcase;
+}
+
+.adresse-icon {
+  @extend .fa-phone;
+}
+
+.document-icon {
+  @extend .fa-file-text-o;
+}
+
+.pyramide-icon {
+  @extend .fa-tree;
+}
+
+.diplome-icon {
+  @extend .fa-file;
+}
+
+.of-icon {
+  @extend .fa-institution;
+}
+
+.candidat-icon {
+  @extend .fa-graduation-cap;
+}
+
+.activites-pagination-container > ul.pagination {
+  margin: 0;
+}
+
+.box-body.activites {
+  padding: 10px 0px;
+
+  h3 {
+    font-size: ceil(1.1 * $font-size-base);
+    font-weight: 300;
+    border-bottom: solid 1px $silver;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+  }
+
+  .media {
+    padding: 0.3em 1em;
+
+    .media-object {
+      font-size: 2em;
+      width: 1.8em;
+      text-align: center;
+    }
+
+    .media-body {
+      font-weight: 300;
+      font-size: $font-size-small;
+    }
+
+    .media-heading {
+      font-weight: 400;
+      font-size: $font-size-base;
+      text-transform: uppercase;
+
+      .media-date {
+        float: right;
+        font-size: $font-size-small;
+        color: $brand-info;
+        text-transform: lowercase;
+      }
+    }
+  }
+}
