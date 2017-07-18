@@ -1,0 +1,17 @@
+.idea/
+node_modules/
+public/css/
+public/js/
+public/fonts/
+public/build/
+public/storage/
+public/rev-manifest.json
+resources/assets/bower/
+storage/
+vendor/
+virtual/vagrant/.vagrant/
+virtual/vagrant/vagrant.yml
+.release
+.env
+composer.lock
+yarn.lock
